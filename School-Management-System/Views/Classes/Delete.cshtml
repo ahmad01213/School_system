@@ -1,0 +1,50 @@
+﻿@model Class
+
+@{
+    ViewData["Title"] = "حذف شعبة";
+}
+        <div class="card card-default m-3">
+
+              <div class="p-3 d-flex justify-content-between border" style="background-color: #f8f9fa;">
+            <div class="card-title ">حذف شعبة</div>
+
+            <div>
+             <form asp-action="Delete">
+
+            <input type="submit" value="تأكيد الحذف"  class="btn mr-auto btn text-white bg-gradient-danger btn-xs" style="width:130px;height:40px;font-size:17px;"/>
+            </form>
+            </div>
+          </div>
+    <d<div class="card-body">
+                 <div class="row">
+              <div class="col-md-6">
+
+                  <div class="form-group">
+                  <label asp-for="SchoolId">المدرسة</label>
+                  <select disabled asp-for="SchoolId"  class="form-control select2" style="width: 100%;">
+                
+                        @foreach (var item in ViewBag.Schools)
+                        {
+                       <option value="@item.Id">@item.Name</option>
+                        }
+                  </select>
+
+                </div>
+            
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label asp-for="Name">اسم الشعبة</label>
+                    <input readonly type="text" asp-for="Name" class="form-control" id="exampleInputEmail1" placeholder="اسم الشعبة">
+                     <span asp-validation-for="Name" class="text-danger"></span>
+                  </div>
+                 </div>      
+                 </div>
+            </div>
+
+              <!-- /.col -->
+            </div>
+                 </>
+          </div>
+
+

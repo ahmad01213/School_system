@@ -1,0 +1,49 @@
+﻿@model Subject
+
+@{
+    ViewData["Title"] = "إضافة مادة";
+}
+
+        <div class="card card-default m-3">
+             <form asp-action="Create">
+
+              <div class="p-3 d-flex justify-content-between border" style="background-color: #f8f9fa;">
+            <div class="card-title ">إضافة مادة</div>
+
+            <div>
+            <input type="submit" value="حفظ"  class="btn   mr-auto btn text-white bg-gradient-primary btn-xs" style="width:100px;height:40px;font-size:17px;"/>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                
+                
+              <!-- /.col -->
+              <div class="col-md-6">
+                <!-- /.form-group -->
+                   <div class="form-group">
+                    <label asp-for="Name">اسم المادة</label>
+                    <input type="text" asp-for="Name" class="form-control" id="exampleInputEmail1" placeholder="اسم المادة">
+                     <span asp-validation-for="Name" class="text-danger"></span>
+
+                  </div>
+
+                    <div class="form-group">
+                    <label class="text-white" >save</label>
+
+                  </div>
+
+                </div>
+                <!-- /.form-group -->
+              </div>
+
+              <!-- /.col -->
+            </div>
+                 </form>
+          </div>
+
+

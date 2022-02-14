@@ -1,0 +1,84 @@
+﻿@model School
+
+@{
+    ViewData["Title"] = "Add a new cinema";
+}
+
+        <div class="card card-default m-3">
+             <form asp-action="Create">
+
+              <div class="p-3 d-flex justify-content-between border" style="background-color: #f8f9fa;">
+            <div class="card-title ">تسجيل مدرسة</div>
+
+            <div>
+            <input type="submit" value="تسجيل"  class="btn   mr-auto btn text-white bg-gradient-primary btn-xs" style="width:100px;height:40px;font-size:17px;"/>
+
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                
+                <div class="col-md-6">
+                <div class="form-group">
+                  <label asp-for="City">المدينة</label>
+                  <select asp-for="City" class="form-control select2" style="width: 100%;">
+                    <option  value="الأندلس" >الأندلس</option>
+                    <option value="الفيحاء">الفيحاء</option>
+                    <option value="طيبة">طيبة</option>
+                    <option value="الإحساء">الإحساء</option>
+                    <option value="الصناعية">الصناعية</option>
+                    <option value="البحر">البحر</option>
+                    <option value="الحمراء">الحمراء</option>
+                  </select>
+                  <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                  <div class="form-group">
+                    <label asp-for="Name">اسم المدرسة</label>
+                    <input type="text" asp-for="Name" class="form-control" id="name" placeholder="اسم المدرسة">
+                      <span asp-validation-for="Name" class="text-danger"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label asp-for="Manager">مدير المدرسة</label>
+                    <input type="text" asp-for="Manager" class="form-control" id="manager" placeholder="مدير المدرسة">
+                     <span asp-validation-for="Manager" class="text-danger"></span>
+
+                  </div>
+
+                <!-- /.form-group -->
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                   <div class="form-group">
+                    <label asp-for="Phone">رقم الهاتف</label>
+                    <input type="text"  asp-for="Phone" class="form-control" id="name" placeholder="رقم الهاتف">
+                     <span asp-validation-for="Phone" class="text-danger"></span>
+
+                  </div>
+                <!-- /.form-group -->
+                   <div class="form-group">
+                    <label asp-for="Email">البريد الإلكتروني</label>
+                    <input type="email" asp-for="Email" class="form-control" id="exampleInputEmail1" placeholder="البريد الإلكتروني">
+                     <span asp-validation-for="Email" class="text-danger"></span>
+
+                  </div>
+
+                    <div class="form-group">
+                    <label class="text-white" >save</label>
+
+                  </div>
+
+                </div>
+                <!-- /.form-group -->
+              </div>
+
+              <!-- /.col -->
+            </div>
+                 </form>
+          </div>
+
+

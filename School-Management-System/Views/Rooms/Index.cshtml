@@ -1,0 +1,85 @@
+﻿@model X.PagedList.IPagedList<RoomDetail>
+@using School_Management_System.Data.ViewModels
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewData["Title"] = "قائمة القاعات";
+}
+
+<div class="col-12">
+<div class="card m-3">
+
+   
+      <div class="p-3 d-flex justify-content-between border" style="background-color: #f8f9fa;">
+      <h3 class="card-title">قائمة القاعات</h3>
+      <a  class="btn  btn-info btn-sm"  asp-action="Create"> + إضافة قاعة جديدة</a>
+          </div>
+   <!-- /.card-header -->
+   <div class="card-body">
+      <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+       
+         <div class="row">
+            <div class="col-sm-12">
+               <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                  <thead>
+                     <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="اسم المدرسة: activate to sort column descending" style="width: 166.484px;">م</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="اسم المدرسة: activate to sort column descending" style="width: 166.484px;">اسم القاعة</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="اسم المدرسة: activate to sort column descending" style="width: 166.484px;">رقم القاعة</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="اسم المدرسة: activate to sort column descending" style="width: 166.484px;">المدرسة</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="اسم المدرسة: activate to sort column descending" style="width: 166.484px;">المادة</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="اسم المدرسة: activate to sort column descending" style="width: 166.484px;">تاريخ الإضافة</th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="المدينة: activate to sort column ascending" style="width: 98.1875px;">تعديل</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  @foreach (var item in Model)
+                                {
+                     <tr role="row" class="odd">
+                        <td>@item.Room.Id</td>
+                        <td>@item.Room.Name</td>
+                        <td>@item.Room.RoomId</td>
+                        <td>@item.School.Name</td>
+                        <td>@item.Subject.Name</td>
+                        <td>@item.Room.CreatedAt</td>
+                   
+                            <td class="d-flex align-content-between align-items-center">
+                           <a type="button" class="btn  btn-outline-primary mx-3 btn-xsm" style="width:70px;height:30px;font-size:10px;font-weight:bold" asp-action="Edit" asp-route-id="@item.Room.Id">تعديل</a>
+                           <a type="button" class="btn  btn-danger btn-xsm" style="width:70px;height:30px;font-size:10px;font-weight:bold" asp-action="Delete" asp-route-id="@item.Room.Id">حذف</a>
+                        </td>
+   
+                     </tr>
+                                    
+                                }
+                  </tbody>
+      
+               </table>
+               <br />
+
+
+@Html.PagedListPager(Model, page => Url.Action("Index", 
+    new { page }),
+
+    new PagedListRenderOptions {
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" }}
+    )
+    <div class="m-3">
+
+</div>
+    صفحة @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) من @Model.PageCount
+
+
+            </div>
+         </div>
+       
+      </div>
+   </div>
+   <!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>

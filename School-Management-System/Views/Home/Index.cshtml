@@ -1,0 +1,156 @@
+﻿
+@model HomeDetail
+@using School_Management_System.Data.ViewModels
+@{
+    ViewData["Title"] = "الرئيسية";
+}
+
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">الرئيسية</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6 " style="cursor:pointer;" @("onclick=GoToRoom('Schools/Index')") >
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>@Model.Schools</h3>
+
+                <p>عدد المدارس</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">عرض المزيد <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+         
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success" style="cursor:pointer;" @("onclick=GoToRoom('Rooms/Index')")>
+              <div class="inner">
+                <h3>@Model.Rooms</sup></h3>
+
+                <p>عدد القاعات</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">عرض المزيد <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6" style="cursor:pointer;" @("onclick=GoToRoom('Subjects/Index')")>
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>@Model.Subjects</h3>
+
+                <p>عدد المواد</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">عرض المزيد<i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6" style="cursor:pointer;" @("onclick=GoToRoom('Teatchers/Index')")>
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>@Model.Teachers</h3>
+
+                <p>عدد المعلمين</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">عرض المزيد <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+
+        
+<div class="col-12">
+<div class="card mt-3">
+
+   
+              <div class="p-3 d-flex justify-content-between border" style="background-color: #f8f9fa;">
+              <h3 class="card-title">قائمة المدارس</h3>
+      <a  class="btn  btn-info btn-sm" asp-controller="Schools" asp-action="Create"> + تسجيل مدرسة جديدة</a>
+          </div>
+   <!-- /.card-header -->
+   <div class="card-body">
+      <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+       
+         <div class="row">
+            <div class="col-sm-12">
+               <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                  <thead>
+                     <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="اسم المدرسة: activate to sort column descending" style="width: 166.484px;">اسم المدرسة</th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="اسم المدير: activate to sort column ascending" style="width: 219.234px;">اسم المدير</th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="رقم التواصل: activate to sort column ascending" style="width: 203.938px;">رقم التواصل</th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="الايميل: activate to sort column ascending" style="width: 139.156px;">الايميل</th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="المدينة: activate to sort column ascending" style="width: 98.1875px;">المدينة</th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="المدينة: activate to sort column ascending" style="width: 98.1875px;">تعديل</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  @foreach (var item in Model.RecentSchools)
+                                {
+                     <tr role="row" class="odd">
+                        <td class="sorting_1">@item.Name</td>
+                        <td>@item.Manager</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Email</td>
+                        <td>@item.City</td>
+                            <td class="d-flex align-content-between align-items-center">
+                           <a type="button" class="btn  btn-outline-primary mx-3 btn-xsm" style="width:70px;height:30px;font-size:10px;font-weight:bold" asp-controller="Schools" asp-action="Edit" asp-route-id="@item.Id">تعديل</a>
+                           <a type="button" class="btn  btn-danger btn-xsm" style="width:70px;height:30px;font-size:10px;font-weight:bold" asp-controller="Schools" asp-action="Delete" asp-route-id="@item.Id">حذف</a>
+                        </td>
+   
+                     </tr>
+                                    
+                                }
+                  </tbody>
+           
+               </table>
+               <br />
+
+
+
+            </div>
+         </div>
+       
+      </div>
+   </div>
+   <!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  
+    <script>
+    function GoToRoom(rout){
+    window.location = rout;
+}
+    </script>

@@ -1,0 +1,139 @@
+﻿@model TimeTable
+@{
+    ViewData["Title"] = "تعديل جدول";
+}
+
+        <div class="card card-default m-3">
+             <form asp-action="Edit">
+
+              <div class="p-3 d-flex justify-content-between border" style="background-color: #f8f9fa;">
+            <div class="card-title ">تعديل جدول</div>
+
+            <div>
+            <input type="submit" value="تعديل"  class="btn   mr-auto btn text-white bg-gradient-primary btn-xs" style="width:100px;height:40px;font-size:17px;"/>
+
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                <div class="col-md-6">
+                <div class="form-group">
+                  <label asp-for="TeatcherId">المعلم</label>
+                  <select asp-for="TeatcherId"  class="form-control select2" style="width: 100%;">
+                
+                        @foreach (var item in ViewBag.Data.Teatchers)
+                        {
+                       <option value="@item.Id">@item.Name</option>
+                        }
+                  </select>
+                  <span asp-validation-for="TeatcherId" class="text-danger"></span>
+                </div>
+
+
+                   <div class="form-group">
+                  <label asp-for="SubjectId">المادة</label>
+                  <select asp-for="SubjectId"  class="form-control select2" style="width: 100%;">
+                
+                        @foreach (var item in ViewBag.Data.Subjects)
+                        {
+                       <option value="@item.Id">@item.Name</option>
+                        }
+                  </select>
+                  <span asp-validation-for="SubjectId" class="text-danger"></span>
+                </div>
+
+                  <div class="form-group">
+                  <label asp-for="SubjectId">المادة</label>
+                  <select asp-for="SubjectId"  class="form-control select2" style="width: 100%;">
+                
+                        @foreach (var item in ViewBag.Data.Subjects)
+                        {
+                       <option value="@item.Id">@item.Name</option>
+                        }
+                  </select>
+                  <span asp-validation-for="SubjectId" class="text-danger"></span>
+                </div>
+
+                  <div class="form-group">
+                  <label asp-for="RoomId">القاعة</label>
+                  <select asp-for="RoomId"  class="form-control select2" style="width: 100%;">
+                
+                        @foreach (var item in ViewBag.Data.Rooms)
+                        {
+                       <option value="@item.Id">@item.Name</option>
+                        }
+                  </select>
+                  <span asp-validation-for="RoomId" class="text-danger"></span>
+                </div>
+            
+
+                 <div class="form-group">
+
+                <!-- /.form-group -->
+              </div>
+
+                            </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+
+                  <div class="form-group">
+
+                  <label asp-for="Dayofweek">اليوم</label>
+                  <select asp-for="Dayofweek"  class="form-control select2" style="width: 100%;">
+                
+                        @foreach (var item in ViewBag.Data.Days)
+                        {
+                       <option value="@item">@item </option>
+                        }
+                  </select>
+                  <span asp-validation-for="Dayofweek" class="text-danger"></span>
+
+                  </div>
+                <div class="form-group">
+                  <label asp-for="InTime">توقيت الحضور</label>
+                  <select asp-for="InTime"  class="form-control select2" style="width: 100%;">
+                
+                        @foreach (var item in ViewBag.Data.Times)
+                        {
+                       <option value="@item">@item </option>
+                        }
+                  </select>
+                  <span asp-validation-for="InTime" class="text-danger"></span>
+                </div>
+
+                   <div class="form-group">
+                  <label asp-for="OutTime">توقيت الانصراف</label>
+                  <select asp-for="OutTime"  class="form-control select2" style="width: 100%;">
+                
+                        @foreach (var item in ViewBag.Data.Times)
+                        {
+                       <option value="@item">@item </option>
+                        }
+                  </select>
+                  <span asp-validation-for="OutTime" class="text-danger"></span>
+                </div>
+ 
+
+                  <div class="form-group">
+                  <label asp-for="Permittime">وقت السماحية</label>
+                  <select asp-for="Permittime"  class="form-control select2" style="width: 100%;">
+                
+                        @foreach (var item in ViewBag.Data.Permittimes)
+                        {
+                       <option value="@item">@item </option>
+                        }
+                  </select>
+                  <span asp-validation-for="Permittime" class="text-danger"></span>
+                </div>
+
+                </div>
+                </div>
+              <!-- /.col -->
+            </div>
+               </form>
+          </div>
+
+
