@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{CAE8211D-918A-4B3A-8943-26996709E029}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="School-Management-System/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="School-Management-System/appsettings.json" Line="10" Column="5" />
+      <File FileName="School-Management-System/appsettings.Development.json" />
+      <File FileName="School-Management-System/Controllers/HomeController.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="School-Management-System" expanded="True">
+            <Node name="School-Management-System" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.School-Management-System PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

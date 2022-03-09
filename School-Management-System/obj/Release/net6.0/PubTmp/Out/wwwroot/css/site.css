@@ -1,0 +1,25 @@
+html {
+  font-size: 9px;
+}
+
+
+/* style.css */
+* {
+    font-size: 12px;
+    line-height: 1;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}

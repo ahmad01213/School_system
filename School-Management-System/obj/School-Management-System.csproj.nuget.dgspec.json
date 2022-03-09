@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\School-Management-System\\School-Management-System\\School-Management-System.csproj": {}
+    "/Volumes/iSlahul/MyProjects/School-System/School-Management-System/School-Management-System/School-Management-System.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\School-Management-System\\School-Management-System\\School-Management-System.csproj": {
+    "/Volumes/iSlahul/MyProjects/School-System/School-Management-System/School-Management-System/School-Management-System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\School-Management-System\\School-Management-System\\School-Management-System.csproj",
+        "projectUniqueName": "/Volumes/iSlahul/MyProjects/School-System/School-Management-System/School-Management-System/School-Management-System.csproj",
         "projectName": "School-Management-System",
-        "projectPath": "E:\\Projects\\School-Management-System\\School-Management-System\\School-Management-System.csproj",
-        "packagesPath": "C:\\Users\\Ahmad\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\School-Management-System\\School-Management-System\\obj\\",
+        "projectPath": "/Volumes/iSlahul/MyProjects/School-System/School-Management-System/School-Management-System/School-Management-System.csproj",
+        "packagesPath": "/Users/islahul/.nuget/packages/",
+        "outputPath": "/Volumes/iSlahul/MyProjects/School-System/School-Management-System/School-Management-System/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ahmad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/islahul/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +38,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.1, )"
@@ -61,6 +67,10 @@
             "PagedList.Mvc": {
               "target": "Package",
               "version": "[4.5.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.1, )"
             },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
@@ -89,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
         }
       }
     }

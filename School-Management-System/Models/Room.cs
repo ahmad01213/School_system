@@ -7,16 +7,12 @@ namespace School_Management_System.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "هذا الحقل إجباري")]
-        public int RoomId { get; set; }
+        public string RoomId { get; set; }
 
-        [Required(ErrorMessage = "هذا الحقل إجباري")]
-        public string Name { get; set; }
 
-        [Required(ErrorMessage = "هذا الحقل إجباري")]
-        public int SchoolId { get; set; }
+        public string SchoolId { get; set; }
+        public string Roomip { get; set; }
 
-        [Required(ErrorMessage = "هذا الحقل إجباري")]
         public int SubjectId { get; set; }
         public DateTime CreatedAt { get; set; }
 

@@ -8,6 +8,6 @@ namespace School_Management_System.Data.ViewModels
         public int Teachers { get; set; }
         public int Subjects { get; set; }
         public int Rooms { get; set; }
-        public IEnumerable<School> RecentSchools { get; set; }
+        public IEnumerable<User> RecentSchools { get; set; }
     }
 }
