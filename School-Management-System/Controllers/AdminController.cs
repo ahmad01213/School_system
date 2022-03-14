@@ -105,7 +105,7 @@ namespace School_Management_System.Controllers
 
         }
 
-         [Authorize(Roles = "admin,school")]
+        [Authorize(Roles = "admin,school")]
         [HttpGet("rooms")]
         public async Task<ActionResult> GetRooms()
         {

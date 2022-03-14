@@ -1,0 +1,10 @@
+id name times createdAt
+
+times{
+    day:satarday,
+    timin:12:30,
+    timeout:1:02,
+    allowedIn:5,
+    allowedOut:10,
+    selected :true
+}
